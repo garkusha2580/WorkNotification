@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
                 ],
                 [
                     'text' => 'Append to notification',
-                    'url' => route("add"),
+                    'url' => route("notification.create"),
                     'icon' => 'file',
                 ]);
         });

@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.admin')
 
 @section('title', 'AdminLTE')
 
@@ -7,5 +7,7 @@
 @stop
 
 @section('content')
-    <p>You are logged in!</p>
+    <div id="app">
+        <input-comp></input-comp>
+    </div>
 @stop
