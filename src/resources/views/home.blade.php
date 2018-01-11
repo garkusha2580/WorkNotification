@@ -8,6 +8,9 @@
 
 @section('content')
     <div id="app">
-        <input-comp></input-comp>
+        <input-comp
+                v-for="input in inputs"
+                :tmp="input"
+        ></input-comp>
     </div>
 @stop
