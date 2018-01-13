@@ -1,0 +1,15 @@
+.site-remove {
+  transition: all linear 0.2s;
+  &:hover {
+    color: red;
+    transition: all linear 0.2s;
+  }
+}
+
+.site-edit {
+  transition: all linear 0.2s;
+  &:hover {
+    transition: all linear 0.2s;
+    color: #3c8dbc
+  }
+}

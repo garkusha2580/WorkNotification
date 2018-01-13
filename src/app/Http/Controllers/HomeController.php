@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddSite;
+use App\Models\Site;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,11 +25,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('home')->with(["sitesItems" => Site::all()]);
     }
 
-    public function add()
+    /**
+     * @param AddSite $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function add(AddSite $request)
     {
-        return 0;
+        Site::add($request->post());
+        return redirect()->back();
     }
 }

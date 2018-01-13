@@ -5,11 +5,14 @@
  */
 window.Vue = require('vue');
 Vue.component("inputComp", require("./components/inputComponent"));
+Vue.component("homeRow", require("./components/homeRowComponent"));
 
 
 require("jquery-lazy");
 require('./bootstrap');
-require('./forms/notificationAddForm.js');
+require("./forms/createAppend");
+
+// require('./forms/notificationAddForm.js');
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

@@ -4,6 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Models\Data
+ *
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\CrossNotif[] $crossNotif
+ * @property-read \App\Models\Site $site
+ * @mixin \Eloquent
+ */
 class Data extends Model
 {
     /**

@@ -1,17 +1,23 @@
 <template>
-    <div class="form-group" :class="{'has-error':tmp.err}">
-        <label :for="tmp.id">{{tmp.label}}</label>
-        <input class="form-control" type="text" :id="tmp.id" :name="tmp.id" :placeholder="tmp.holder">
-        <span v-if="tmp.err" class="help-block">{{tmp.err}}</span>
+    <div class="form-group" :class="{'has-error':input.err}">
+        <label :for="input.id">{{input.label}}</label>
+        <input @focus="hideErr" class="form-control" :type="input.type?input.type:''" :id="input.id" :name="input.id"
+               :placeholder="input.holder">
+        <span v-if="input.err" class="help-block">{{input.err}}</span>
     </div>
 </template>
 
 <script>
     export default {
         props: [
-            "tmp"
+            "input"
         ],
         name: "input-component",
+        methods: {
+            hideErr: function () {
+                this.input.err = ''
+            }
+        }
 
     }
 </script>

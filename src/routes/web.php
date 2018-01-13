@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::prefix("admin")->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::post('/home', "HomeController@add")->name("addSite");
     Route::resource("/notification", "NotificationController");
 });
 

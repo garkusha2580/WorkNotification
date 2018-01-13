@@ -24,9 +24,9 @@ class AppServiceProvider extends ServiceProvider
                     'can' => 'manage-blog',
                 ],
                 [
-                    'text' => 'Pages',
+                    'text' => 'Links',
                     'url' => route("home"),
-                    'icon' => 'file',
+                    'icon' => 'paperclip',
                 ],
                 [
                     'text' => 'Append to notification',
