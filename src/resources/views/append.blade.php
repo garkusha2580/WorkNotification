@@ -68,7 +68,6 @@
 @stop
 @section("js")
     @parent
-
     <script>
         let vm = new Vue({
             el: "#notif-app",

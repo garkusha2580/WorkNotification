@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\NotificationQueuer;
+use App\Jobs\NotificationRelase;
 use App\Models\Notification;
 use App\Models\Site;
 use Illuminate\Http\Request;
@@ -25,11 +27,13 @@ class NotificationController extends Controller
      */
     public function create()
     {
+        $this->dispatch(new NotificationQueuer());
         return response()->view("append",
             [
                 "sitesItems" => Site::all(),
                 "appendItems" => Notification::all()
             ]);
+
     }
 
     /**

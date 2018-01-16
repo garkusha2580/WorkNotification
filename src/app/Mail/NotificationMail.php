@@ -11,17 +11,17 @@ class NotificationMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    private $dataArray;
+    private $dataObj;
 
     /**
      * Create a new message instance.
      *
-     * @param array $dataArray
+     * @param $dataObj
      * @return void
      */
-    public function __construct(array $dataArray = [])
+    public function __construct($dataObj = null)
     {
-        $this->dataArray = $dataArray;
+        $this->dataObj = $dataObj;
     }
 
     /**
@@ -31,6 +31,6 @@ class NotificationMail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->markdown('mail.admin-notif.mail', ['data' => $this->dataObj]);
     }
 }

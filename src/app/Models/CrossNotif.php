@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -18,7 +19,7 @@ class CrossNotif extends Model
      *
      * @var string
      */
-    protected $table = "cross_notif";
+    protected $table = "cross_notification";
 
 
     /**
@@ -50,5 +51,10 @@ class CrossNotif extends Model
     public function data()
     {
         return $this->belongsTo(Data::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

@@ -23,3 +23,7 @@ Route::prefix("admin")->group(function () {
     Route::resource("/notification", "NotificationController");
 });
 
+Route::get("mail", function () {
+    return new \App\Mail\NotificationMail(\App\Models\Data::first()->toArray());
+});
+
